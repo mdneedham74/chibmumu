@@ -15,6 +15,7 @@
 
 % Variables that controls behaviour
 \usepackage{ifthen} % for conditional statements
+\usepackage{listings}
 \newboolean{pdflatex}
 \setboolean{pdflatex}{true} % False for eps figures 
 
@@ -94,6 +95,8 @@
 
 \input{introduction}
 
+\input{strategy}
+
 \input{dataset}
 
 \input{selection}
@@ -106,13 +109,17 @@
 
 \input{summary}
 
+\appendix
+
+\input{clones}
+
 % This should be taken out in the final paper
 %\input{supplementary-app}
 
 \addcontentsline{toc}{section}{References}
 %\setboolean{inbibliography}{true}
 \bibliographystyle{LHCb}
-\bibliography{main,standard,LHCb-PAPER,LHCb-CONF,LHCb-DP,LHCb-TDR}
+\bibliography{main,standard,LHCb-PAPER,LHCb-CONF,LHCb-DP,LHCb-TDR,local}
  
  
 \newpage

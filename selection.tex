@@ -1,3 +1,55 @@
 \section{Selection}
 \label{sec:selection}
+ %
+No blind analysis was performed, rather the selection aims to be as similar as possible to the analysis of the $\chic
+\rightarrow J/\psi \mu^+ \mu^-$ decay mode in Ref. \cite{Anderlini:2270922}. The
+emphasis in the selection is on on \textit{track quality}.  
+
+Further loose cuts are applied to the dimuon pair created by the stripping
+or TURBO line to increase the purity. To ensure good track quality the
+cut in the ghost probability is tightened to 0.1, the $\pt$ of both
+muons is required to be larger than $1 \gevc$ and $p < 500 \gevc2$.  Both tracks are required to be
+well identified muons by requiring \textbf{ProbNNmu}$>0.2$ for Run 1
+data and \textbf{ProbNNmu}$>0.3$ in Run2. In the study of $\chic
+\rightarrow J/\psi \mu^+ \mu^-$ decays \cite{Anderlini:2270922} it was found that background
+was significantly reduced by requiring $\eta < 4.9$ and consequently this
+requirement is applied here.  Finally, both tracks should
+be within the acceptance of the spectrometer ($|tx| < 0.3
+\textrm{mrad}$ and $|ty| < 0.25 \textrm{mrad}$). A mass window
+corresponding to a roughly $\pm 3 \sigma$ is applied to the $\Upsilon$
+candidate. The size of the window used for each $\Upsilon$ state is
+summarized in Table \ref{tab:umasscut}. 
+\begin{table}[htb!]
+\caption{\small $\Upsilon$ mass window }
+\begin{center}
+\begin{tabular}{l|c}
+State & Window [$\mevcc$]  \\
+\hline
+$\Upsilon(1S)$ & 125 \\
+$\Upsilon(2S)$ & 130 \\
+$\Upsilon(3S)$ & 140 \\
+\end{tabular}
+\end{center}
+\label{tab:umasscut}
+\end{table}
+
+To select muons from the virtual photon in $\chi_b \rightarrow
+\Upsilon \mu^+ \mu^-$ the same cuts are applied as for the muons from
+the $\Upsilon$, apart from the $\pt$ and $p$ requirements which are
+loosened to $200 \mevc$ and $1.5 \gevc$ respectively. Soft pions are
+selected using the same kinematic, geometric and track quality
+criteria and by requiring  \textbf{ProbNNpi}$>0.2$ and vetoing
+possible decays in flight using \textbf{isMuon} as a veto. In addition
+to the standard clone removal applied in the reconstructed further
+requirements are made as described in Appendix~\ref{app:clones}. 
  
+Pairs of muons (pions) with opposite charge are combined with
+$\Upsilon(nS)$ candidates to form $\chi_b$ ($\Upsilon(nS+1)$)
+candidates. A kinematic fit is applied to each candidate with the
+$\Upsilon$ mass constrained to the nominal value and a constraint on
+the pointing of the candidate to the primary vertex. The $\chi^2/NDOF$
+of this fit is required to be less than four. The estimate of the mass
+uncertainty on the candidate given by the track fit is required to be
+less than $5 \mevc$. To define a fiducial volume where the simulation
+is reliable the $\pt$ of the candidate is required to be less than $60
+\gevc$ and the rapidity restricted to the range 2.2 - 4.5. 
