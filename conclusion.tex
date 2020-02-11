@@ -1,0 +1,35 @@
+\section{Conclusion}
+\label{sec:conclusion}
+%
+In this note an emulator to estimate the mass resolution for the decay
+$\chicone \rightarrow J/\psi \mu^+ \mu^-$ has been developed. The
+emulator reproduces the resolution in the full simulation
+ for this mode. Dividing data into regions of phase space
+the agreement with the full simulation is generally found at the level
+of a $5 \%$ or better . The worse level of agreement is at the $10 \%$ level
+at high candidate $\pt$.  Tte model is flexible enough to
+be used for similar topology modes where it reproduces the overall
+resolution at the level of $3 \%$ or better. It is intended to use
+this mode for studies of $\chi_b$ Dalitz decays. Though the work
+desecribed here is adequate for that use-case various improvements
+could be envisaged. First, more care could be taken in data-sample
+selection to give a more uniform coverage of the phase space. Second,
+the hyperparameters of the BDT have not been optimized beyond the
+defaults suggested in TMVA. Finally, it would be better to train one
+BDT rather than three which also takes into account the correlations
+between the parameters. That would be possible in a framework such as
+Tensorflow.
+
+The regression model for the momentum resolution has wider
+applicability and could be used directly in \textbf{RapidSim} or other
+fast simulation packages. An insight gained from this study is the
+importance of the resolution on the track slopes for modes with soft
+tracks. This is greatly improved by application of a pointing constraint
+to the PV in the decay tree fit.  This needs to considered when using
+a fast simulation. To properly account for this requires either to
+explicitly apply this constraint or to properly parameterize the
+effect for different topologies.
+
+
+
+\clearpage
