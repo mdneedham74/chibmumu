@@ -1,0 +1,52 @@
+\section{Clone requirments}
+\label{sec:clones}
+%
+Duplicate tracks created by the reconstruction are inevitable at some
+level. Great care is taken during the pattern recognition step in
+\textbf{Brunel} to remove such clones. Such clones can be dangerous as
+they can generate artificial mass peaks. To ensure that no clones
+remain two requirements known from previous
+studies to reject clones with minimal signal loss are applied \footnote{See for
+example $https://twiki.cern.ch/twiki/bin/view/LHCbPhysics/CloneCuts$}. The code used for this is given below: 
+%
+\begin{scriptsize}
+\begin{lstlisting}{}
+int type1Clone(float tx1, float tx2, float ty1, float ty2) {
+  return ((TMath::Abs(tx1 -tx2) < 0.0004) && (TMath::Abs(ty1 -ty2) < 0.0002));
+}
+
+int type2Clone(float tx1, float tx2, float ty1, float ty2, float qDivp1, float qDivp2  ){
+  return ((TMath::Abs(tx1 -tx2) < 0.005)
+  && (TMath::Abs(ty1 -ty2) <
+  0.005) && TMath::Abs(qDivp1 - qDivp2) < 1e-6);
+}
+
+int t1Clone(float tx1, float tx2, float tx3, float tx4, 
+                 float ty1, float ty2,float ty3, float ty4 ){
+
+  
+  if (type1Clone(tx1,tx2, ty1,ty2) == 1) return 1;
+  if (type1Clone(tx1,tx3, ty1,ty3) == 1) return 1;   
+  if (type1Clone(tx1,tx4, ty1,ty4) == 1) return 1;   
+  if (type1Clone(tx2,tx3, ty2,ty3) == 1) return 1;  
+  if (type1Clone(tx2,tx4, ty2,ty4) == 1) return 1;  
+  if (type1Clone(tx3,tx4, ty3,ty4) == 1) return 1;  
+  return 0;
+}
+
+int t2Clone(float tx1, float tx2, float tx3, float tx4, float ty1, 
+             float ty2,float ty3, float ty4 , float  qp1, 
+            float qp2, float qp3, float qp4){
+
+  if (type2Clone(tx1,tx2, ty1,ty2, qp1, qp2) == true) return 1;
+  if (type2Clone(tx1,tx3, ty1,ty3, qp1, qp3) == true) return 1;   
+  if (type2Clone(tx1,tx4, ty1,ty4, qp1, qp4) == true) return 1;   
+  if (type2Clone(tx2,tx3, ty2,ty3, qp2, qp3) == true) return 1;  
+  if (type2Clone(tx2,tx4, ty2,ty4, qp2, qp4) == true) return 1;  
+  if (type2Clone(tx3,tx4, ty3,ty4,qp3, qp4) == true) return 1;  
+  return 0;
+}
+\end{lstlisting}{}
+\end{scriptsize}
+
+\clearpage
