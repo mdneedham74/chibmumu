@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 \section{Dataset and selection}
 \label{sec:dataset}
  The simulation samples used in this study are summarized in Table
@@ -7,8 +6,8 @@
  \rightarrow J/\psi \mu^+ \mu^-$ is the main one used for this
  study. To parameterize  the momentum resolution in a more general way
  the $\Upsilon  \rightarrow \mu^+ \mu^-$ decay, with high momentum
- tracks is used. The other samples are used to validate the method and
- shows it more general applicability. 
+ tracks is also used. The other samples are used to validate the method and
+ to demonstrate its more general applicability. 
 
 \begin{table}[htb!]
 \caption{\small Simulated data samples used in this study. }
@@ -54,11 +53,11 @@ $\psi(2S) \rightarrow J/\psi \pi^+ \pi^-$  &  28144002  & 2011 & Down
                                                       & 729988  \\
 $\psi(2S) \rightarrow J/\psi \pi^+ \pi^-$  &  28144002 & 2012 & Up &
                                                                    
-                     'dddb-20170721-2                       & sim-20160321-2-vc-mu100
+                     dddb-20170721-2                       & sim-20160321-2-vc-mu100
                                                       & 1568952 \\
 $\psi(2S) \rightarrow J/\psi \pi^+ \pi^-$  & 28144002 & 2011 & Down &
                                                                    
-                    'dddb-20170721-2                        & sim-20160321-2-vc-md100
+                    dddb-20170721-2                        & sim-20160321-2-vc-md100
                                                       &  1573450 \\
 
 
@@ -86,71 +85,10 @@ J/\psi \mu^+ \mu^-$ are described in
 Ref. ~\cite{Anderlini:2270922}. An important change made was to remove the
 particle identification requirements.  This is important since
 \textbf{isMuon} requires $p > 3 \gevc$ which is higher than the
-acceptance of the spectrometer ($\sim 1.5 \gevc$). In addition, the inner
+acceptance of the tracker ($\sim 1.5 \gevc$). In addition, the inner
 acceptance of the muon system does not match exactly that of the
-tracker. Without these changes the emulator does not cover the full
-acceptance and will consequently not be able to perform optimally for
+tracker. Without these changes the training set would not cover the
+full tracker acceptance and consequently would not able to perform optimally for
 modes involving particles other than muons.  Similar selections are applied for the $\psi(2S)$ and
 $X(3872)$ modes. The $\Upsilon \rightarrow \mu^+ \mu^-$ candidates are
-output by the \textbf{FullDSTDiMuonDiMuonHighMassLine} line.
-=======
-\section{Dataset}
-\label{sec:dataset}
-%
-The full dataset collected by LHCb between 2011 and 2018 is used for
-this analysis. This corresponds to 1~\invfb collected at 7\tev,
-2~\invfb at 8\tev and 6 \invfb collected at 13\tev. For processing
-\textbf{DaVinci v44r6p1} was used. The momentum scale calibration available in the latest database
-tags is applied \footnote{The tool \textbf{TrackScaleState}.} to the data. This
-ensures the momentum scale is correct to a precision of $3
-\times 10^{-4}$.
-
-The present of a $\Upsilon(nS) n = 1,2,3$ meson decaying to a dimuon
-provides a distinctive signature for triggering with high efficiency. The data collected
-from 2011-2016 went to the full DST. Events collected during this
-period are requested to pass the following three trigger levels:
-\begin{description}
-\item[L0Muon] Events should pass either the $L0$ single or dimuon
-  lines. The single muon line requires a single $\pt$ muon and cuts on
-  the total number of hits in the SPD. The dimuon line requires the presence of two muon candidates
-  with a product of $\pt$'s larger than a value that depends on the
-  running period (typically $1.68 (\gevc)^2$) and less than 900 hits
-  in the SPD.
-\item[Hlt1DiMuonHighMass] This requires the presence of two well
-  reconstructed tracks with hits in the muon system, momentum in
-  excess of $6 \gevc$ and have $\pt > 0.5 \gevc$. The two muons must
-  form a common vertex and have an invariant mass larger than $2.7
-  \gevcc$. 
-\item[HLT2DiMuonB] This confirms the \textbf{HLT1} decision with higher precision and requires
-the invariant mass of the dimuon pair to be larger than  $4.7
-  \gevcc$. 
-\end{description}
-These events are then stripped using the
-\textbf{FullDSTDiMuonDiMuonHighMassLine} line. This tightens the
-requirements on track and vertex quality applied in the trigger, in
-particular requiring $p > 8 \gevc$ and applies an invariant mass cut
-at $> 8.5 \gevc$. The stripping versions used are summarized in Table \ref{tab:strip}. 
-
-\begin{table}[htb!]
-\caption{\small Stripping datasets }
-\begin{center}
-\begin{tabular}{l|c}
-Year & Stripping version  \\
-\hline
-2011 & 21r1 \\
-2012 & 21 \\
-2015 & 24r1 \\
-2016 & 28r1 \\
-\end{tabular}
-\end{center}
-\label{tab:strip}
-\end{table}
-
-From 2017 onwards the $\Upsilon(nS) n = 1,2,3$ lines moved to
-\textbf{TURBO}. The  \textbf{L0} and \textbf{HLT1} lines remain the
-same. At \textbf{HLT2}, the line
-\textbf{Hlt2DiMuonUpsilonTurboDecision} is required and no stripping
-line is necessary. The \textbf{Hlt2DiMuonUpsilonTurbo} line confirms
-the \textbf{HLT1} decision and requires a dimuon pair with an invariant mass larger than $7.9
-  \gevcc$. \textbf{TURBO4a} is used for 2017 and \textbf{TURBO5} for 2018.
->>>>>>> b5746ff0abefc10c12f8e4f931af1da1f187a7d6
+taken from the output by the \textbf{FullDSTDiMuonDiMuonHighMassLine} line.
